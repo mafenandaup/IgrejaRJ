@@ -1,0 +1,514 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Dark Theme Variables */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  
+  /* Dark Theme Colors */
+  --background: #1A202C;
+  --foreground: #F7FAFC;
+  --card: #2D3748;
+  --card-foreground: #F7FAFC;
+  --popover: #2D3748;
+  --popover-foreground: #F7FAFC;
+  --primary: #E67E22;
+  --primary-foreground: #F7FAFC;
+  --secondary: #4A5568;
+  --secondary-foreground: #F7FAFC;
+  --muted: #4A5568;
+  --muted-foreground: #CBD5E0;
+  --accent: #2ECC71;
+  --accent-foreground: #F7FAFC;
+  --destructive: #E53E3E;
+  --border: #4A5568;
+  --input: #4A5568;
+  --ring: #E67E22;
+  
+  /* Custom Variables */
+  --color-primary-dark: #1A202C;
+  --color-secondary-dark: #2D3748;
+  --color-accent-warm: #E67E22;
+  --color-accent-cool: #2ECC71;
+  --color-text-primary: #F7FAFC;
+  --color-text-secondary: #CBD5E0;
+  --color-text-muted: #A0AEC0;
+  --color-border: #4A5568;
+  --color-card-bg: #2D3748;
+  --color-hero-overlay: rgba(26, 32, 44, 0.85);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+  --gradient-accent: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(26, 32, 44, 0.9) 0%, rgba(45, 55, 72, 0.8) 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+  
+  /* Transitions */
+  --transition-fast: all 0.2s ease-in-out;
+  --transition-normal: all 0.3s ease-in-out;
+  --transition-slow: all 0.5s ease-in-out;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Typography Classes */
+.church-font-primary {
+  font-family: 'Inter', sans-serif;
+}
+
+.church-font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.church-text-primary {
+  color: var(--color-text-primary);
+}
+
+.church-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.church-text-muted {
+  color: var(--color-text-muted);
+}
+
+.church-text-accent-warm {
+  color: var(--color-accent-warm);
+}
+
+.church-text-accent-cool {
+  color: var(--color-accent-cool);
+}
+
+.church-text-dark {
+  color: var(--color-text-primary);
+}
+
+/* Background Classes */
+.church-bg-primary {
+  background-color: var(--color-primary-dark);
+}
+
+.church-bg-secondary {
+  background-color: var(--color-secondary-dark);
+}
+
+.church-bg-card {
+  background-color: var(--color-card-bg);
+}
+
+.church-gradient {
+  background: var(--gradient-primary);
+}
+
+.church-gradient-accent {
+  background: var(--gradient-accent);
+}
+
+/* Hero Section Styles */
+.church-hero-overlay {
+  background: var(--gradient-hero);
+  backdrop-filter: blur(2px);
+}
+
+/* Card Styles */
+.church-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-normal);
+  overflow: hidden;
+}
+
+.church-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-accent-warm);
+}
+
+/* Section Dividers */
+.church-section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-accent);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 1s ease-out 0.3s both;
+}
+
+.slide-in-right {
+  animation: slideInRight 1s ease-out 0.6s both;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.6s ease-out;
+}
+
+.bounce-in {
+  animation: bounceIn 1s ease-out;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition-slow);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header Styles */
+header {
+  background: rgba(26, 32, 44, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Navigation Styles */
+nav button {
+  position: relative;
+  color: var(--color-text-secondary);
+  transition: var(--transition-fast);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+nav button:hover {
+  color: var(--color-accent-warm);
+  background-color: rgba(230, 126, 34, 0.1);
+}
+
+nav button::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent-warm);
+  transition: var(--transition-fast);
+  transform: translateX(-50%);
+}
+
+nav button:hover::after {
+  width: 80%;
+}
+
+/* Live Badge Styles */
+.live-badge {
+  background: linear-gradient(45deg, #ff0000, #ff4444);
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+}
+
+/* Ministry Cards */
+.ministry-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.ministry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(230, 126, 34, 0.1), transparent);
+  transition: var(--transition-slow);
+}
+
+.ministry-card:hover::before {
+  left: 100%;
+}
+
+.ministry-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--color-accent-warm);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Event Cards */
+.event-card {
+  background: var(--color-card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition-normal);
+  border: 1px solid var(--color-border);
+}
+
+.event-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: var(--shadow-xl);
+}
+
+.event-card img {
+  transition: var(--transition-normal);
+}
+
+.event-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Schedule Cards */
+.schedule-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: var(--transition-normal);
+}
+
+.schedule-card:hover {
+  border-color: var(--color-accent-cool);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Contact Section */
+.contact-info {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: var(--transition-normal);
+}
+
+.contact-info:hover {
+  border-color: var(--color-accent-cool);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Footer Styles */
+footer {
+  background: var(--color-primary-dark);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Video container responsive */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-warm);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D35400;
+}
+
+/* Loading Animation */
+.loading-spinner {
+  border: 3px solid var(--color-border);
+  border-top: 3px solid var(--color-accent-warm);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .church-card {
+    margin-bottom: 1rem;
+  }
+  
+  .ministry-card,
+  .event-card,
+  .schedule-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right {
+    animation-duration: 0.6s;
+  }
+}
+
