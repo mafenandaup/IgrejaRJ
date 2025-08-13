@@ -22,7 +22,7 @@ import './App.css';
 
 // Import images
 import igrejaInterior from './assets/igreja_interior.jpg';
-import cultoPessoas from './assets/culto_pessoas.jpg';
+import cultoPessoas from './assets/igreja_interior.jpg';
 import eventosReligiosos from './assets/eventos_religiosos.jpg';
 
 function App() {
