@@ -21,8 +21,8 @@ import GoogleMap from './components/GoogleMap';
 import './App.css';
 
 // Import images
-import igrejaInterior from './assets/pelourinho-17.webp';
-import cultoPessoas from './assets/pelourinho-17.webp';
+import igrejaInterior from './assets/Gabrielmeodeia.webp';
+import cultoPessoas from './assets/Gabrielmeodeia.webp';
 import eventosReligiosos from './assets/eventos_religiosos.jpg';
 
 function App() {
