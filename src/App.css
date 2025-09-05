@@ -36,7 +36,7 @@
   --radius: 0.75rem;
   
   /* Dark Theme Colors */
- --background: #1F1F1F;
+ --background: #1c1513;
   --foreground: #F5F5F5;
   --card: #2C2C2C;
   --card-foreground: #F5F5F5;
@@ -48,7 +48,7 @@
   --secondary-foreground: #F5F5F5;
   --muted: #3A3A3A;
   --muted-foreground: #AAAAAA;
-  --accent: #A97936;
+  --accent: #56341a;
   --accent-foreground: #F5F5F5;
   --destructive: #EF5350;
   --border: #4A4A4A;
@@ -56,15 +56,15 @@
   --ring: #C4956C;
   
   /* Custom Variables */
---color-primary-dark: #1F1F1F;
-  --color-secondary-dark: #2c2c2c;
+--color-primary-dark: #19130f;
+  --color-secondary-dark: #221b1b;
   --color-accent-warm: #C4956C;
   --color-accent-cool: #A97936;
   --color-text-primary: #F5F5F5;
   --color-text-secondary: #E8D5C4;
   --color-text-muted: #AAAAAA;
   --color-border: #4A4A4A;
-  --color-card-bg: #2C2C2C;
+  --color-card-bg: #221f1e;
   --color-hero-overlay: rgba(44, 29, 26, 0.85);
   
   /* Gradients */

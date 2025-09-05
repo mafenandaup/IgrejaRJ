@@ -134,7 +134,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background church-font-primary">
+    <div className="min-h-screen bg-foreground church-font-primary">
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -209,7 +209,7 @@ function App() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              className="border-2 border-amber-700 text-amber-600 hover:bg-orange-500 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
               onClick={() => scrollToSection('sobre')}
             >
               Conheça Nossa Igreja
@@ -330,12 +330,12 @@ function App() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {schedule.events.map((event, eventIndex) => (
-                    <div key={eventIndex} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-600/50 transition-colors duration-300">
-                      <div className="flex items-center space-x-3">
-                        <Clock className="w-5 h-5 church-text-accent-cool" />
+                    <div key={eventIndex} className="flex items-center text-center justify-between p-4 px-3 bg-card rounded-lg hover:bg-gray-600/50 transition-colors duration-300">
+                      <div className="flex flex-col text-sm items-center space-x-3">
+                        <Clock className="w-4 h-4 church-text-accent-cool" />
                         <span className="font-medium church-text-primary">{event.time}</span>
                       </div>
-                      <span className="text-sm church-text-secondary">{event.event}</span>
+                      <span className="text-xs church-text-secondary">{event.event}</span>
                     </div>
                   ))}
                 </CardContent>
