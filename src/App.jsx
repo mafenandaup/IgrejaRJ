@@ -188,8 +188,8 @@ function App() {
         <div className="absolute inset-0 church-hero-overlay" />
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 fade-in church-font-display">
-            IGREJA
+          <h1 className="text-6xl md:text-8xl font-extrabold mb-4 fade-in church-font-display">
+            Igreja
           </h1>
           <h2 className="text-3xl md:text-5xl church-font-display mb-6 slide-in-left church-text-accent-warm">
             Comunidade de Fé
@@ -200,7 +200,7 @@ function App() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              className="bg-gradient-to-rrom-amber-800 to bg-amber-950  hover:from-amber-700 hover:to-amber-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
               onClick={() => scrollToSection('transmissao')}
             >
               <Play className="w-5 h-5 mr-2" />
@@ -251,15 +251,15 @@ function App() {
                 para fortalecer nossa fé e impactar positivamente nossa cidade.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Badge variant="secondary" className="px-4 py-2 text-sm bg-orange-500/20 text-orange-400 border-orange-500/30">
+                <Badge variant="secondary" className="px-4 py-2 text-sm bg-amber-600/20 text-amber-700 border-orange-500/30">
                   <Users className="w-4 h-4 mr-2" />
                   500+ Membros
                 </Badge>
-                <Badge variant="secondary" className="px-4 py-2 text-sm bg-green-500/20 text-green-400 border-green-500/30">
+                <Badge variant="secondary" className="px-4 py-2 text-sm bg-green-500/20 text-green-300 border-green-500/30">
                   <Calendar className="w-4 h-4 mr-2" />
                   Fundada em 1985
                 </Badge>
-                <Badge variant="secondary" className="px-4 py-2 text-sm bg-blue-500/20 text-blue-400 border-blue-500/30">
+                <Badge variant="secondary" className="px-4 py-2 text-sm bg-blue-500/20 text-blue-300 border-blue-500/30">
                   <Heart className="w-4 h-4 mr-2" />
                   Família Acolhedora
                 </Badge>
@@ -294,7 +294,7 @@ function App() {
             {ministries.map((ministry, index) => (
               <Card key={index} className="ministry-card scale-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardHeader className="text-center">
-                  <div className={`w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white shadow-lg`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br from-[#742d00] to-[#603c1e] rounded-full flex items-center justify-center mx-auto mb-4 text-white shadow-lg`}>
                     {ministry.icon}
                   </div>
                   <CardTitle className="text-xl church-text-primary church-font-display">{ministry.title}</CardTitle>
